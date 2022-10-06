@@ -17,6 +17,7 @@ cout<<"\n This is a program developed by Max for Lab 6 to calculate the average 
 cout<<"\n\n How many students are in the class? Please enter a number 1-30. \n\n";
 cin >>numberofstudents;
 
+/*
 cout<<"\n\n Do you have scores to enter for your students? Please type 'y' for yes or 'n' for no. "<<endl;
 cin>>yes_no;
 
@@ -95,15 +96,11 @@ while (yes_no == 'y')
     cout<< "\n\n Do you have another score to add for student "<<k<<"? Type 'y' for yes and any other key(s) to end the session for student "<<k<<". \n\n";
     cin >> yes_no;}}
 
-if (yes_no == 'n')
+if (yes_no == 'n')*/
 
-{k++;
-n=0;
-score=0;
-total=0;
-average=0;}
+//{k++;}
 
-if ((yes_no == 'n') && (k<=numberofstudents))
+//if ((yes_no == 'n') && (k<=numberofstudents))
 
 for (int k = 1; k <= numberofstudents; k++)
 {
@@ -112,7 +109,7 @@ cout <<"\n Do you have a score to enter for student "<<k<<"?"<<endl;
 cin>>yes_no;
 
 if (yes_no == 'y'){
-
+int n=0, score=0, total=0, average=0;
 cout <<"\n\n Enter a score 0-100: \n\n";
 cin >> score;
 
@@ -177,14 +174,10 @@ while (yes_no == 'y')
     cout<< "\n\n Do you have another score to add for student "<<k<<"? Type 'y' for yes and any other key(s) to end the session for student "<<k<<". \n\n";
     cin >> yes_no;}
 
-}}}
 
 
-
-if ((yes_no == 'n') && (k> numberofstudents))
-
-    {cout <<"\n\n Thank you for using Max's Lab 5 program. You entered scores and found averages for "<< k
-       << " students. " << endl;}}
-}}       return 0;}
+{cout <<"\n\n Thank you for using Max's Lab 6 program. You entered scores and found averages for "<< k
+       << " students. " << endl;}}}}
+       return 0;}
 // end main
-//lab5
+//lab6
