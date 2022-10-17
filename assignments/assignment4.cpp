@@ -35,10 +35,13 @@ for (tme1=0; tme1<=100; tme1++){
 
 //equations, given in assignment, but I'm not sure if I did them correctly
 
+//acceleration of simulated rocket in feet/second squared
 acc1 = ((4.25-(.15*(tme1*tme1)))+((6.07*(pow(tme1,2.751)))/9995));
 
+//velocity of simulated rocket in feet/second
 vel1 = (((4.25*tme1)-((.15*(pow(tme1,3)))/3))+((6.07*(pow(tme1,3.751)))/(3.751*9995)));
 
+//distance of simulated rocket in feet, starting at 90 ft
 dst1 = (((90+((4.25*(tme1*tme1))/2))-((.15*(pow(tme1,4)))/12))+((6.07*(pow(tme1,4.751))/(4.751*37491))));
 
 //ensuring program stops running when the simulated rocket hits the ground
@@ -67,9 +70,13 @@ for (tme1=0, increment=0.05; tme1<=100; tme1+=increment){
 
 //equations, given in assignment, but I'm not sure if I did them correctly
 
+//acceleration of simulated rocket in feet/second squared
 acc1 = ((4.25-(.15*(tme1*tme1)))+((6.07*(pow(tme1,2.751)))/9995));
 
+//velocity of simulated rocket in feet/second
 vel1 = (((4.25*tme1)-((.15*(pow(tme1,3)))/3))+((6.07*(pow(tme1,3.751)))/(3.751*9995)));
+
+//distance of simulated rocket in feet, starting at 90 ft
 
 dst1 = (((90+((4.25*(tme1*tme1))/2))-((.15*(pow(tme1,4)))/12))+((6.07*(pow(tme1,4.751))/(4.751*37491))));
 
@@ -89,9 +96,6 @@ cout << "The velocity is " <<vel1<< " feet per second."<<endl;
 //print distance
 cout<<"DISTANCE"<<endl;
 cout << "The distance is " << dst1 << " feet. \n\n"<< endl;
-
-//add another 'tme1++' to ensure interval is at .05 seconds
-tme1+0.05;
 
 }}
 
