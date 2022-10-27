@@ -39,7 +39,7 @@ double tme1=0.0;
 tme1++;
 }
 
-printFunction (){
+void printFunction (){
     double tme1 = 0.00;
     double acc1 = 0.00;
     double vel1= 0.00;
@@ -57,6 +57,8 @@ cout << "The velocity is " <<vel1<< " feet per second."<<endl;
 cout<<"DISTANCE"<<endl;
 cout << "The distance is " << dst1 << " feet. \n\n"<< endl;
 }
+
+
 
 void footerFunction(){
 cout << "Thanks for using Max's C++ Rocket Performance Predictor." << endl;
@@ -81,16 +83,17 @@ cout<<setiosflags(ios::fixed|ios::showpoint);
 //calculates values for variables when the time is in the appropriate range
 nameFunction();
 
+
 while (dst1>=60)
-for (tme1=0, tme1<=100; tme1++)
+for (tme1=0; tme1<=100; tme1++){
 {
 //ensuring program stops running when the simulated rocket hits the ground
 vel1Function();
 acc1Function();
 dst1Function();
 incrementFunction();
+printFunction();
 }
-
 
 while ((dst1>=0)&(dst1 <60))
 for (tme1=0, increment=0.05; tme1<=100; tme1+=increment){
@@ -98,11 +101,81 @@ for (tme1=0, increment=0.05; tme1<=100; tme1+=increment){
 vel1Function();
 acc1Function();
 dst1Function();
+printFunction();
 }
+
+//backup
+for (tme1=0; tme1<=100; tme1++){
+
+//equations, given in assignment, but I'm not sure if I did them correctly
+
+//acceleration of simulated rocket in feet/second squared
+acc1 = ((4.25-(.15*(tme1*tme1)))+((6.07*(pow(tme1,2.751)))/9995));
+
+//velocity of simulated rocket in feet/second
+vel1 = (((4.25*tme1)-((.15*(pow(tme1,3)))/3))+((6.07*(pow(tme1,3.751)))/(3.751*9995)));
+
+//distance of simulated rocket in feet, starting at 90 ft
+dst1 = (((90+((4.25*(tme1*tme1))/2))-((.15*(pow(tme1,4)))/12))+((6.07*(pow(tme1,4.751))/(4.751*37491))));
+
+//ensuring program stops running when the simulated rocket hits the ground
+
+if ((dst1 >=0)&(dst1 >60)){
+
+//print time
+cout<<"TIME"<<endl;
+cout << "After "<<setprecision(2)<<fixed<<tme1<<" seconds:"<<endl;
+//print acceleration
+cout<<"ACCELERATION"<<endl;
+cout << "The acceleration is " <<acc1<< " feet per second, squared."<<endl;
+//print velocity
+cout<<"VELOCITY"<<endl;
+cout << "The velocity is " <<vel1<< " feet per second."<<endl;
+//print distance
+cout<<"DISTANCE"<<endl;
+cout << "The distance is " << dst1 << " feet. \n\n"<< endl;
+
+//add another 'tme1++' to ensure interval is at 2 seconds
+tme1++;
+
+}}
+
+for (tme1=0, increment=0.05; tme1<=100; tme1+=increment){
+
+//equations, given in assignment, but I'm not sure if I did them correctly
+
+//acceleration of simulated rocket in feet/second squared
+acc1 = ((4.25-(.15*(tme1*tme1)))+((6.07*(pow(tme1,2.751)))/9995));
+
+//velocity of simulated rocket in feet/second
+vel1 = (((4.25*tme1)-((.15*(pow(tme1,3)))/3))+((6.07*(pow(tme1,3.751)))/(3.751*9995)));
+
+//distance of simulated rocket in feet, starting at 90 ft
+
+dst1 = (((90+((4.25*(tme1*tme1))/2))-((.15*(pow(tme1,4)))/12))+((6.07*(pow(tme1,4.751))/(4.751*37491))));
+
+//ensuring program stops running when the simulated rocket hits the ground
+
+if ((dst1>=0)&(dst1 <60)){
+
+//print time
+cout<<"TIME"<<endl;
+cout << "After "<<setprecision(2)<<fixed<<tme1<<" seconds:"<<endl;
+//print acceleration
+cout<<"ACCELERATION"<<endl;
+cout << "The acceleration is " <<acc1<< " feet per second, squared."<<endl;
+//print velocity
+cout<<"VELOCITY"<<endl;
+cout << "The velocity is " <<vel1<< " feet per second."<<endl;
+//print distance
+cout<<"DISTANCE"<<endl;
+cout << "The distance is " << dst1 << " feet. \n\n"<< endl;
+
+}}
 
 footerFunction();
 
 //Assignment 4
     return 0;
 
-}
+}}
