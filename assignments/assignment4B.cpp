@@ -82,7 +82,7 @@ cout<<setiosflags(ios::fixed|ios::showpoint);
 
 //calculates values for variables when the time is in the appropriate range
 nameFunction();
-
+/*
 
 while (dst1>=60)
 for (tme1=0; tme1<=100; tme1++){
@@ -102,7 +102,7 @@ vel1Function();
 acc1Function();
 dst1Function();
 printFunction();
-}
+}*/
 
 //backup
 for (tme1=0; tme1<=100; tme1++){
@@ -178,4 +178,4 @@ footerFunction();
 //Assignment 4
     return 0;
 
-}}
+}
